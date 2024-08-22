@@ -1,0 +1,10 @@
+﻿  Board.cpp
+C:\Users\crulp\source\repos\HEX\Board.cpp(54,24): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\crulp\source\repos\HEX\Board.cpp(199,22): warning C4566: character represented by universal-character-name '\u0082' cannot be represented in the current code page (1252)
+C:\Users\crulp\source\repos\HEX\Board.cpp(199,22): warning C4566: character represented by universal-character-name '\u0099' cannot be represented in the current code page (1252)
+C:\Users\crulp\source\repos\HEX\Board.cpp(199,22): warning C4566: character represented by universal-character-name '\u0087' cannot be represented in the current code page (1252)
+C:\Users\crulp\source\repos\HEX\Board.cpp(270,11): warning C4552: '!=': result of expression not used
+C:\Users\crulp\source\repos\HEX\Board.cpp(337,22): warning C4566: character represented by universal-character-name '\u0082' cannot be represented in the current code page (1252)
+C:\Users\crulp\source\repos\HEX\Board.cpp(337,22): warning C4566: character represented by universal-character-name '\u0099' cannot be represented in the current code page (1252)
+C:\Users\crulp\source\repos\HEX\Board.cpp(337,22): warning C4566: character represented by universal-character-name '\u0087' cannot be represented in the current code page (1252)
+  HEX.vcxproj -> C:\Users\crulp\source\repos\HEX\x64\Debug\HEX.exe

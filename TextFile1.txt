@@ -1,0 +1,307 @@
+
+r b
+r b
+
+00 01
+10 11
+
+    ---
+ --<   >--
+< r >-<   >
+ --<   >--
+    ---
+IS_BOARD_POSSIBLE
+
+          ---
+       --< r >--
+    --< r >-< r >--
+ --< b >-< r >-< r >--
+< b >-< b >-< r >-< r >
+ --< b >-< b >-< r >--
+    --< b >-< b >--
+       --< b >--
+          ---
+IS_BOARD_POSSIBLE
+
+
+
+       ---
+    --< b >--
+ --< r >-< r >--
+< r >-<   >-<   >
+ --<   >-<   >--
+    --< b >--
+       ---
+IS_BOARD_POSSIBLE
+
+
+
+
+
+
+    ---
+ --< r >--
+< b >-<   >
+ --< r >--
+    ---
+IS_BOARD_POSSIBLE
+
+
+
+
+
+
+
+
+
+IS_BOARD_POSSIBLE
+
+
+IS_GAME_OVER
+
+
+
+1 1 1
+0 1 0
+1 1 1
+
+0 1 1
+1 1 1
+1 1 0
+
+IS_GAME_OVER
+      void printBoard(char** board, int rows) {
+    for (int i = 0; i < rows; i++) {
+        cout << board[i] << endl;
+    }
+}
+
+ board_method.convert_to_2D_array(board, rows, size);
+            board_method.printGrid(board, size);
+            cout << endl;
+            board_method.startDFS(board, rows, cols);
+
+
+
+
+ for (int row = 0; row < size; row++) {
+        for (int col = 0; col < size; col++) {
+
+            int column_board = 2 + 3 * row + 3 * col; 
+            int row_board = size + row - col;     
+
+            table[row][col] = board[row_board][column_board];
+             //cout << row << col;  
+            /* cout << table[row][col] << " ";
+            if (col < size - 1) cout << " ";  */
+        }
+       // cout << endl; 
+    }
+
+    //cout << endl;
+
+   /* cout << "Converted Coordinates Table:" <<endl; 
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+
+            if (table[i][j] == 114 ) { cout << 'r' << " "; }
+            if (table[i][j] == 98) { cout << 'b' << " "; }
+            if (table[i][j] == 32) { cout << '0' << " "; }
+        }
+        cout << endl; 
+    }
+    cout << endl;
+    
+    cout << "DFS:" << endl;*/
+
+
+
+    /*for (int j = 0; j < size; j++) {
+                if (table[0][j] == 114) {
+                    redwins = DFS(table, visited, 0, j);
+                    if (redwins > 0) {
+                        cout << "YES RED" << endl;
+                        is_game_end = true;
+                        success = true;
+                        break;
+                    }
+                    for (int k = 0; k < size; k++) {
+                        for (int m = 0; m < size; m++) {
+                            visited[k][m] = false;
+                        }
+                    }
+                }
+            }
+
+
+            if (!is_game_end) {
+                for (int i = 0; i < size; i++) {
+                    if (table[i][0] == 98) {
+                        bluewins = DFS(table, visited, i, 0);
+
+                        if (bluewins > 0) {
+                            cout << "YES BLUE" << endl;
+                            is_game_end = true;
+                            success = true;
+                            break;
+                        }
+
+                        for (int k = 0; k < size; k++) {
+                            for (int m = 0; m < size; m++) {
+                                visited[k][m] = false;
+                            }
+                        }
+                    }
+                }
+            }*/
+
+
+
+
+                               ---
+                            --<   >--
+                         --<   >-< b >--
+                      --< r >-< b >-< b >--
+                   --< r >-<   >-< b >-< b >--
+                --<   >-< b >-< b >-< r >-< b >--
+             --<   >-< r >-<   >-< b >-< r >-< r >--
+          --<   >-<   >-< b >-< b >-< r >-< r >-< r >--
+       --< b >-<   >-< b >-< r >-< b >-< r >-<   >-<   >--
+    --< b >-< r >-< r >-< r >-< b >-< r >-< r >-< b >-< b >--
+ --< r >-< b >-< r >-< r >-< b >-< r >-< b >-< b >-< b >-< r >--
+< b >-<   >-< r >-< r >-<   >-<   >-< r >-< r >-<   >-< r >-< b >
+ --<   >-< r >-<   >-<   >-< b >-< r >-< r >-<   >-< b >-< b >--
+    --< b >-< r >-< b >-<   >-< b >-< b >-<   >-< b >-< b >--
+       --< r >-< r >-< b >-< r >-< r >-< r >-<   >-< r >--
+          --< b >-< r >-< b >-< b >-<   >-< r >-<   >--
+             --< r >-<   >-<   >-< b >-< r >-<   >--
+                --< b >-< r >-< b >-<   >-< r >--
+                   --< r >-< b >-< b >-< r >--
+                      --< b >-< r >-< b >--
+                         --< b >-<   >--
+                            --< r >--
+                               ---
+IS_BOARD_POSSIBLE
+
+                               ---
+                            --< r >--
+                         --< b >-< b >--
+                      --< r >-< b >-< r >--
+                   --< b >-< b >-< r >-< b >--
+                --< r >-< r >-< b >-< b >-< r >--
+             --< r >-< b >-< r >-< b >-< r >-< b >--
+          --< b >-< b >-< r >-< r >-< r >-< b >-< b >--
+       --< r >-< b >-<   >-< b >-< b >-< r >-< r >-< b >--
+    --< b >-< b >-< r >-< r >-< b >-< r >-< b >-< r >-< b >--
+ --< r >-< r >-< r >-< r >-< b >-< b >-< r >-< b >-< r >-< r >--
+< b >-< r >-< b >-< b >-< b >-< r >-< r >-< r >-< r >-< b >-< r >
+ --< b >-< r >-< r >-< b >-< b >-< r >-< r >-< b >-< b >-< r >--
+    --< r >-< r >-< r >-< b >-< b >-< b >-< b >-< b >-< b >--
+       --< b >-< r >-< r >-< r >-< r >-< r >-< r >-< b >--
+          --< r >-< r >-< b >-< r >-< b >-< b >-< r >--
+             --< r >-< b >-< b >-< r >-< r >-< b >--
+                --< r >-< r >-< b >-< r >-< b >--
+                   --< b >-< b >-< b >-< b >--
+                      --< r >-< b >-< b >--
+                         --< b >-< r >--
+                            --< r >--
+                               ---
+IS_BOARD_POSSIBLE
+
+                               ---
+                            --<   >--
+                         --<   >-< b >--
+                      --< r >-< b >-< b >--
+                   --< r >-<   >-< b >-< b >--
+                --<   >-< b >-< b >-< r >-< b >--
+             --<   >-< r >-<   >-< b >-< r >-< r >--
+          --<   >-<   >-< b >-< b >-< r >-< r >-< r >--
+       --< b >-<   >-< b >-< r >-< b >-< r >-<   >-<   >--
+    --< b >-< r >-< r >-< r >-< b >-< r >-< r >-< b >-< b >--
+ --< r >-< b >-< r >-< r >-< b >-< r >-< b >-< b >-< b >-< r >--
+< b >-<   >-< r >-< r >-<   >-<   >-< r >-< r >-<   >-< r >-< b >
+ --<   >-< r >-<   >-<   >-< b >-< r >-< r >-<   >-< b >-< b >--
+    --< b >-< r >-< b >-<   >-< b >-< b >-<   >-< b >-< b >--
+       --< r >-< r >-< b >-< r >-< r >-< r >-<   >-< r >--
+          --< b >-< r >-< b >-< b >-<   >-< r >-<   >--
+             --< r >-<   >-<   >-< b >-< r >-<   >--
+                --< b >-< r >-< b >-<   >-< r >--
+                   --< r >-< b >-< b >-< r >--
+                      --< b >-< r >-< b >--
+                         --< b >-<   >--
+                            --< r >--
+                               ---
+IS_BOARD_POSSIBLE
+
+          ---
+       --< b >--
+    --< b >-< r >--
+ --< b >-< r >-< b >--
+< r >-< r >-< r >-< r >
+ --< b >-< r >-< b >--
+    --< r >-< b >--
+       --< b >--
+          ---
+IS_BOARD_POSSIBLE
+
+
+
+
+
+                ---
+             --< b >--
+          --< b >-< r >--
+       --< b >-< r >-< b >--
+    --< r >-< r >-< b >-< b >--
+ --< r >-< b >-< b >-<   >-< b >--
+< r >-< r >-< b >-< b >-< r >-< r >
+ --<   >-< b >-< r >-< b >-< r >--
+    --< b >-< b >-< r >-< r >--
+       --< r >-< r >-< r >--
+          --< b >-< r >--
+             --< b >--
+                ---
+IS_BOARD_POSSIBLE
+
+
+                ---
+             --<   >--
+          --< b >-< b >--
+       --< r >-< b >-< b >--
+    --< r >-< b >-< b >-< r >--
+ --< r >-< b >-< b >-< r >-< r >--
+< r >-< b >-< b >-< r >-< b >-< r >
+ --< r >-< r >-<   >-< r >-< r >--
+    --< b >-< b >-< b >-< r >--
+       --< r >-< b >-< r >--
+          --< b >-< r >--
+             --< b >--
+                ---
+IS_BOARD_POSSIBLE
+
+
+
+                               ---
+                            --<   >--
+                         --<   >-< b >--
+                      --< r >-< b >-< b >--
+                   --< r >-<   >-< b >-< b >--
+                --<   >-< b >-< b >-< r >-< b >--
+             --<   >-< r >-<   >-< b >-< r >-< r >--
+          --<   >-<   >-< b >-< b >-< r >-< r >-< r >--
+       --< b >-<   >-< b >-< r >-< b >-< r >-<   >-<   >--
+    --< b >-< r >-< r >-< r >-< b >-< r >-< r >-< b >-< b >--
+ --< r >-< b >-< r >-< r >-< b >-< r >-< b >-< b >-< b >-< r >--
+< b >-<   >-< r >-< r >-<   >-<   >-< r >-< r >-<   >-< r >-< b >
+ --<   >-< r >-<   >-<   >-< b >-< r >-< r >-<   >-< b >-< b >--
+    --< b >-< r >-< b >-<   >-< b >-< b >-<   >-< b >-< b >--
+       --< r >-< r >-< b >-< r >-< r >-< r >-<   >-< r >--
+          --< b >-< r >-< b >-< b >-<   >-< r >-<   >--
+             --< r >-<   >-<   >-< b >-< r >-<   >--
+                --< b >-< r >-< b >-<   >-< r >--
+                   --< r >-< b >-< b >-< r >--
+                      --< b >-< r >-< b >--
+                         --< b >-<   >--
+                            --< r >--
+                               ---
+IS_BOARD_POSSIBLE
